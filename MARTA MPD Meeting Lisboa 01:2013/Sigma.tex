@@ -1,0 +1,220 @@
+\newcommand{\Xmax}{\rm{X}_{\rm max}}
+\newcommand{\nmu}{\rm{N}_{\rm \mu}}
+\newcommand{\Nmu}{\rm{N}_{\rm \mu}}
+\newcommand{\qII}{QGSJ{\textsc{et}}II}
+\newcommand{\q}{QGSJ{\textsc{et}}01}
+\newcommand{\sibyll}{S{\textsc{ibyll}}}
+\newcommand{\epos}{E{\textsc{pos}}}
+\newcommand{\avXmax}{\left< {\rm{X}}_{\rm{max}} \right>}
+\newcommand{\RMSXmax}{\rm{RMS}(\rm{X}_{\rm{max}})}
+%\newcommand{\RMS2Xmax}{RMS^2(X_{max})}
+\newcommand{\avNmu}{\left< {\rm{N}}_{\mu} \right>}
+\newcommand{\RMSNmu}{\rm{RMS}(\rm{N}_{\mu})}
+\newcommand{\lv}{\left <}
+\newcommand{\rv}{\right >}
+\newcommand{\ket}[1]{\ensuremath{|#1\rangle}\xspace}
+\newcommand{\bra}[1]{\ensuremath{\langle #1|}\xspace}
+
+ \newcommand{\mutrue}{\rm{N}_{\mu}^{true}}
+\newcommand{\murec}{\rm{N}_{\mu}^{rec}}
+
+\documentclass[12pt,a4paper,oneside]{book}
+
+\usepackage[a4paper]{geometry}                %To set up margins
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=3cm}
+
+
+\usepackage{graphicx} 
+\usepackage{epstopdf}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel} 
+\usepackage{shadow}
+\usepackage{epsfig}
+\usepackage{xspace}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage{textcomp}
+\usepackage{slashed}
+\usepackage{subfigure}          %inclusion of small, `sub,' figures and tables.
+\usepackage{float}
+\usepackage{sectsty}  %Section style
+%\allsectionsfont{\usefont{OT1}{phv}{bc}{n}\selectfont}
+\usepackage[Bjornstrup]{fncychap} %Chapter Style
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\ChTitleVar{\LARGE\bfseries\scshape}
+\fancyhead[LE,LO]{}
+%\addtolength{\headheight}{}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\lhead{\leftmark}
+\rhead{\rightmark}
+
+%\usepackage{lineno}
+%\modulolinenumbers[1]
+%\linenumbers
+
+
+
+%\setcounter{chapter}{0}             % to start with the chapter no 1
+%\setcounter{page}{1}                % to start with the page number
+%\setcounter{}{0}              % to start the numbering of figures
+ 
+\begin{document} 
+\thispagestyle{empty} 
+
+
+%\begin{figure}[ht] 
+%\includegraphics[scale=0.68]{Imagens/ISTweb} 
+%\end{figure}
+
+\vskip 4truecm
+
+\begin{center}
+\begin{huge} 
+\begin{bf}
+LDF, new ways of measuring Muons
+\end{bf} 
+\end{huge}
+
+\vskip 2truecm
+
+\begin{bf}
+\Large{José Micael Gomes de Oliveira - 70702}\\
+\end{bf}
+ 
+\begin{Large} 
+\begin{bf}
+\vskip0.2truecm
+\vfill 
+LISBON 2012
+\end{bf} 
+\end{Large}
+ 
+\end{center} 
+ 
+\newpage
+\thispagestyle{empty} 
+\tableofcontents
+\setcounter{page}{1}
+\pagenumbering{roman}
+
+\normalsize 
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%   INTRODUCTION   %%%%%%%%%%%%%%%%%%%%
+\chapter{Report}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\section{Work in Progress}
+This is a small report, to situate what I have been doing so far. I am studying the number of muons from ADST reconstructed events. The different phases so far were the following:\begin{enumerate}
+\item Make a program in order to read and analyse ADSTs
+\item Produce an output, root file that allows further analysis
+\item Draw and Fit the LDFs
+\item Make the Signal number of muons correspondance
+\end{enumerate}
+
+\subsubsection{1. ADST analysis and Output}
+The ADST analysis is done with a program called exADST. This program reads and performs some anlysis on the merged ADSTs. The output is a root file (fads.root) with trees and histograms. The Trees are such that for each different event one can access all the 'important' information. These Trees allow for further analysis if needed.
+
+\subsubsection{2. Draw and Fit LDFs}
+From the total signal and the position of the stations, i.e. shower plane distance to the core (GetSPDistance()), we can draw the LDF. The distribution can be fitted with the Nishimura-Kamata-Greisen function:
+\begin{eqnarray}
+S_{\mu}  =  S_{1000}\left(  \frac{r}{r_{1000}}  \right)^{\beta}\left(  \frac{r+r_{700}}{r_{1000}+r_{700}}  \right)^{\beta+\gamma}
+\end{eqnarray}where $\beta$ and $\gamma$ are free parameters. This function provides a good description of the signal on the ground. Since muons are not very affected by multiple Coulomb scattering, their lateral distribution function retains information on the primary interactions of the shower. The number of muons does not decrease as rapidly as the em particles as the shower grows old. Another interesting point on the lateral distribution of muons is that these are wider spread from the core than the EM particles. Their lateral spread is determined by the properties of hadronic interacions. In figure \ref{ldf} you can find an example of the LDF of a simulated and reconstructed event.
+
+
+
+
+
+\subsubsection{3. From the Signal to the Number of Muons}
+The signal in the tanks is given in Units of VEM, vertical equivalent Muon. A VEM corresponds to the Signal of a vertical muon in the tank. So one can write:\begin{eqnarray}
+S_{\mu} &=& N_{\mu} \, t_{\mu}\\
+\left[  VEM  \right] &=& \left[  N  \right]  \left[  L  \right]
+\end{eqnarray}
+In order to determine the signal given by a muon coming from another direction with an angle $\theta$ with respect to the vertical on needs to consider that the track of the muon inside the tank will depend on this angle $\theta$. The area of each tank has to be projected in the shower plane:\begin{eqnarray}
+A_{\theta} &=& \pi R^2 \cos{\theta} + 2\,R\,h\sin{\theta}.
+\end{eqnarray}
+
+
+
+We have a shower front coming from a given direction entering the tanks, the number of muons is given by the product of th projected shower from area and the muon density, we can then write:\begin{eqnarray}
+S_{\mu}(\theta) &=& N_{\mu} \, \lv t_{\mu}(\theta) \rv = \rho_{\mu} \, A_{\theta} \, \lv t_{\mu}(\theta) \rv
+\end{eqnarray}where $A_{\theta}$ is the projected area and $\lv t_{\mu}(\theta) \rv$ is the mean track. In this case the mean track is easily computed:\begin{eqnarray}
+\lv t_{\mu}(\theta) \rv &=& \frac{\int t_{\mu} \, dA_{\theta}}{\int dA_{\theta}}\\
+&=&\frac{V_{station}}{A_{\theta}}
+\end{eqnarray}where $V_{tank}$ is simply the volume of the tank. Using the normalized mean track length we get:\begin{eqnarray}
+S_{\mu}(\theta) &=&\rho_{\mu} \, A_{\theta} \, \frac{\lv t_{\mu}(\theta) \rv}{t_{\mu}(0)}\\
+&=&\rho_{\mu} \, A_{\theta} \, \frac{V}{A_{\theta}} \frac{A_{0}}{V}\\
+&=&\rho_{\mu} \, A_{0}
+\end{eqnarray}
+
+Finally we can determine the number of muons on the ground from the signal as follows:\begin{eqnarray}
+N_{\mu}  &=& \int_0^{2\pi} \int_R\,\,\rho_{\mu} \,r dr\, d\phi\\
+&=& \frac{2\pi}{A_{0}}\int \,\, S_{\mu} \, rdr
+\end{eqnarray}from the fit to the LDF one can get the muon density.
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Concept}
+
+From the Signal of the shower on the ground one can predict the number of muons. Certain assumptions are made such as:\begin{itemize}
+\item At 60 degrees we consider the signal entirely due to muons
+\item 
+\end {itemize}
+From the LDF one can get the muon density $\rho_{\mu}$ and the recover the muon signal on the ground. We have 50 Proton and Iron Corsika simulations for zenith angle 60. For each Corsika simulated event we the reconstruct it 5 times, we have finally a total of 250 reconstructed events.
+
+\subsection{Analysis $\mutrue$ vs. $\murec$}
+
+\textbf{True Muons: } True muons corresponds to the number of muons obtained from the Corsika files. This number is obtained from the integral of the muons density distribution. As the number of muons is known in the simulation we call this number the true number of muons.\\\\
+\textbf{Reconstructed Muons: } As the reconstructions are performed the various Corsika files are "thrown" into the detector and its response to each event is recorded. From this response one can get the lateral distribution function. Our method can then be applied to obtain the number of muons from the LDF.\\\\ 
+The Reconstructed number of muons will be compared to the true number of muons. From here one can determine the electromagnetic contamination both for proton and iron. We callibrate the number of muons to one species and then apply the callibration to the other. A study of the systematics is done and from the pool distributions one can determine the bias and the resolution of our method. Furthermore thanks to the distributions of the number of muons one can also easily determine the separation of the distributions of Muons for proton and iron.
+
+\subsection{Toy Monte-Carlo}
+A Toy Monte-Carlo will help us analyse and determine the most relevant parameters that induce fluctutions in our method. We have a well know number of muons from a LDF which parmeters we fix. We use this LDF to determine the reconstructed number of muons. This number will then fluctuate with a Poisson distribution. After that we reconvert this number into Signal and then construct the LDF. From the LDF one can determine the new $\murec$ and compare it to $\mutrue$. From the pool distributions one can see how the fluctuations impact the number of muons. 
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%   BIBLIOGRAPHY   %%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{10}
+\fancyhead{} % clear all header fields
+\fancyhead[RO,LE]{Bibliography}
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibitem{[B01]}
+	{T. Stanev, High Energy Cosmic Rays, Springer-Verlag (2004).}
+\bibitem{[B09]}
+	{P. K. F. Grieder, Extensive Air Showers, Springer-Verlag (2010).}
+
+
+
+\end{thebibliography}
+
+\end{document}
+
+
+
+
