@@ -1,0 +1,145 @@
+{
+//=========Macro generated from canvas: cprint1/cprint1
+//=========  (Thu Oct 18 20:41:43 2012) by ROOT version5.30/00
+   TCanvas *cprint1 = new TCanvas("cprint1", "cprint1",52,90,600,600);
+   cprint1->Range(18.37642,5.445141,19.72585,7.948423);
+   cprint1->SetFillColor(0);
+   cprint1->SetBorderMode(0);
+   cprint1->SetBorderSize(2);
+   cprint1->SetLogy();
+   cprint1->SetFrameLineWidth(2);
+   cprint1->SetFrameBorderMode(0);
+   cprint1->SetFrameLineWidth(2);
+   cprint1->SetFrameBorderMode(0);
+   
+   TGraphErrors *gre = new TGraphErrors(10);
+   gre->SetName("Graph");
+   gre->SetTitle("");
+   gre->SetFillColor(1);
+   gre->SetLineWidth(2);
+   gre->SetMarkerStyle(20);
+   gre->SetPoint(0,18.6,3224110);
+   gre->SetPointError(0,0,176415.5);
+   gre->SetPoint(1,18.7,5044700);
+   gre->SetPointError(1,0,310479.8);
+   gre->SetPoint(2,18.8,5386720);
+   gre->SetPointError(2,0,408366.2);
+   gre->SetPoint(3,18.9,7801900);
+   gre->SetPointError(3,0,757787.5);
+   gre->SetPoint(4,19,1.06258e+07);
+   gre->SetPointError(4,0,1095968);
+   gre->SetPoint(5,19.1,1.11324e+07);
+   gre->SetPointError(5,0,1487630);
+   gre->SetPoint(6,19.2,1.28669e+07);
+   gre->SetPointError(6,0,1897121);
+   gre->SetPoint(7,19.3,2.29578e+07);
+   gre->SetPointError(7,0,3826300);
+   gre->SetPoint(8,19.4,2.12668e+07);
+   gre->SetPointError(8,0,4170763);
+   gre->SetPoint(9,19.5,3.09737e+07);
+   gre->SetPointError(9,0,8941337);
+   
+   TH1F *Graph_Graph2 = new TH1F("Graph_Graph2","",100,18.51,19.59);
+   Graph_Graph2->SetMinimum(500000);
+   Graph_Graph2->SetMaximum(5e+07);
+   Graph_Graph2->SetDirectory(0);
+   Graph_Graph2->SetStats(0);
+
+   Int_t ci;   // for color index setting
+   ci = TColor::GetColor("#000099");
+   Graph_Graph2->SetLineColor(ci);
+   Graph_Graph2->GetXaxis()->SetTitle("log_{10}(E)");
+   Graph_Graph2->GetXaxis()->SetLabelFont(42);
+   Graph_Graph2->GetXaxis()->SetLabelSize(0.035);
+   Graph_Graph2->GetXaxis()->SetTitleSize(0.035);
+   Graph_Graph2->GetXaxis()->SetTitleOffset(1.4);
+   Graph_Graph2->GetXaxis()->SetTitleFont(42);
+   Graph_Graph2->GetYaxis()->SetTitle("RMS(N_{#mu})");
+   Graph_Graph2->GetYaxis()->SetLabelFont(42);
+   Graph_Graph2->GetYaxis()->SetLabelSize(0.035);
+   Graph_Graph2->GetYaxis()->SetTitleSize(0.035);
+   Graph_Graph2->GetYaxis()->SetTitleOffset(1.4);
+   Graph_Graph2->GetYaxis()->SetTitleFont(42);
+   Graph_Graph2->GetZaxis()->SetLabelFont(42);
+   Graph_Graph2->GetZaxis()->SetLabelSize(0.035);
+   Graph_Graph2->GetZaxis()->SetTitleSize(0.035);
+   Graph_Graph2->GetZaxis()->SetTitleFont(42);
+   gre->SetHistogram(Graph_Graph2);
+   
+   gre->Draw("ap");
+   
+   TF1 *fitmeanres = new TF1("fitmeanres","expo",10,20);
+   fitmeanres->SetFillColor(19);
+   fitmeanres->SetFillStyle(0);
+
+   ci = TColor::GetColor("#00cc00");
+   fitmeanres->SetLineColor(ci);
+   fitmeanres->SetLineWidth(2);
+   fitmeanres->SetLineStyle(2);
+   fitmeanres->SetChisquare(5.275532e+10);
+   fitmeanres->SetNDF(4);
+   fitmeanres->GetXaxis()->SetLabelFont(42);
+   fitmeanres->GetXaxis()->SetLabelSize(0.035);
+   fitmeanres->GetXaxis()->SetTitleSize(0.035);
+   fitmeanres->GetXaxis()->SetTitleFont(42);
+   fitmeanres->GetYaxis()->SetLabelFont(42);
+   fitmeanres->GetYaxis()->SetLabelSize(0.035);
+   fitmeanres->GetYaxis()->SetTitleSize(0.035);
+   fitmeanres->GetYaxis()->SetTitleFont(42);
+   fitmeanres->SetParameter(0,-12.59424);
+   fitmeanres->SetParError(0,9.098567);
+   fitmeanres->SetParLimits(0,0,0);
+   fitmeanres->SetParameter(1,1.41181);
+   fitmeanres->SetParError(1,0.4710718);
+   fitmeanres->SetParLimits(1,0,0);
+   fitmeanres->Draw("SAMEL");
+   
+   TF1 *fitpgreso = new TF1("fitpgreso","expo",10,20);
+   fitpgreso->SetFillColor(19);
+   fitpgreso->SetFillStyle(0);
+   fitpgreso->SetLineColor(2);
+   fitpgreso->SetLineWidth(2);
+   fitpgreso->SetChisquare(36.12649);
+   fitpgreso->SetNDF(4);
+   fitpgreso->GetXaxis()->SetLabelFont(42);
+   fitpgreso->GetXaxis()->SetLabelSize(0.035);
+   fitpgreso->GetXaxis()->SetTitleSize(0.035);
+   fitpgreso->GetXaxis()->SetTitleFont(42);
+   fitpgreso->GetYaxis()->SetLabelFont(42);
+   fitpgreso->GetYaxis()->SetLabelSize(0.035);
+   fitpgreso->GetYaxis()->SetTitleSize(0.035);
+   fitpgreso->GetYaxis()->SetTitleFont(42);
+   fitpgreso->SetParameter(0,-15.9962);
+   fitpgreso->SetParError(0,0.2911606);
+   fitpgreso->SetParLimits(0,0,0);
+   fitpgreso->SetParameter(1,1.606283);
+   fitpgreso->SetParError(1,0.01525678);
+   fitpgreso->SetParLimits(1,0,0);
+   fitpgreso->Draw("SAMEL");
+   
+   TF1 *fitfegreso = new TF1("fitfegreso","expo",10,20);
+   fitfegreso->SetFillColor(19);
+   fitfegreso->SetFillStyle(0);
+   fitfegreso->SetLineColor(4);
+   fitfegreso->SetLineWidth(2);
+   fitfegreso->SetChisquare(3.533855);
+   fitfegreso->SetNDF(4);
+   fitfegreso->GetXaxis()->SetLabelFont(42);
+   fitfegreso->GetXaxis()->SetLabelSize(0.035);
+   fitfegreso->GetXaxis()->SetTitleSize(0.035);
+   fitfegreso->GetXaxis()->SetTitleFont(42);
+   fitfegreso->GetYaxis()->SetLabelFont(42);
+   fitfegreso->GetYaxis()->SetLabelSize(0.035);
+   fitfegreso->GetYaxis()->SetTitleSize(0.035);
+   fitfegreso->GetYaxis()->SetTitleFont(42);
+   fitfegreso->SetParameter(0,-13.09866);
+   fitfegreso->SetParError(0,1.455076);
+   fitfegreso->SetParLimits(0,0,0);
+   fitfegreso->SetParameter(1,1.444376);
+   fitfegreso->SetParError(1,0.07623836);
+   fitfegreso->SetParLimits(1,0,0);
+   fitfegreso->Draw("SAMEL");
+   cprint1->Modified();
+   cprint1->cd();
+   cprint1->SetSelected(cprint1);
+}

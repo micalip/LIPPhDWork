@@ -1,0 +1,106 @@
+{
+//=========Macro generated from canvas: DataDist/cf
+//=========  (Thu Oct 18 23:56:11 2012) by ROOT version5.30/00
+   TCanvas *DataDist = new TCanvas("DataDist", "cf",20,42,800,800);
+   gStyle->SetOptStat(0);
+   DataDist->Range(624999.7,-0.03482143,4.4375e+07,0.3133929);
+   DataDist->SetFillColor(0);
+   DataDist->SetBorderMode(0);
+   DataDist->SetBorderSize(2);
+   DataDist->SetFrameLineWidth(2);
+   DataDist->SetFrameBorderMode(0);
+   DataDist->SetFrameLineWidth(2);
+   DataDist->SetFrameBorderMode(0);
+   
+   TH1D *hmuFe__1 = new TH1D("hmuFe__1","",30,5000000,4e+07);
+   hmuFe__1->SetBinContent(4,0.0122449);
+   hmuFe__1->SetBinContent(5,0.07755102);
+   hmuFe__1->SetBinContent(6,0.1714286);
+   hmuFe__1->SetBinContent(7,0.2653061);
+   hmuFe__1->SetBinContent(8,0.2571429);
+   hmuFe__1->SetBinContent(9,0.1469388);
+   hmuFe__1->SetBinContent(10,0.04897959);
+   hmuFe__1->SetBinContent(11,0.008163265);
+   hmuFe__1->SetBinContent(12,0.008163265);
+   hmuFe__1->SetBinContent(13,0.004081633);
+   hmuFe__1->SetEntries(245);
+   hmuFe__1->SetDirectory(0);
+   hmuFe__1->SetLineColor(4);
+   hmuFe__1->GetXaxis()->SetLabelFont(42);
+   hmuFe__1->GetXaxis()->SetLabelSize(0.035);
+   hmuFe__1->GetXaxis()->SetTitleSize(0.035);
+   hmuFe__1->GetXaxis()->SetTitleFont(42);
+   hmuFe__1->GetYaxis()->SetLabelFont(42);
+   hmuFe__1->GetYaxis()->SetLabelSize(0.035);
+   hmuFe__1->GetYaxis()->SetTitleSize(0.035);
+   hmuFe__1->GetYaxis()->SetTitleFont(42);
+   hmuFe__1->GetZaxis()->SetLabelFont(42);
+   hmuFe__1->GetZaxis()->SetLabelSize(0.035);
+   hmuFe__1->GetZaxis()->SetTitleSize(0.035);
+   hmuFe__1->GetZaxis()->SetTitleFont(42);
+   hmuFe__1->Draw("");
+   
+   TH1D *hmuP__2 = new TH1D("hmuP__2","hmuP",30,5000000,4e+07);
+   hmuP__2->SetBinContent(0,0.008264463);
+   hmuP__2->SetBinContent(1,0.02066116);
+   hmuP__2->SetBinContent(2,0.03305785);
+   hmuP__2->SetBinContent(3,0.1198347);
+   hmuP__2->SetBinContent(4,0.1900826);
+   hmuP__2->SetBinContent(5,0.2603306);
+   hmuP__2->SetBinContent(6,0.2024793);
+   hmuP__2->SetBinContent(7,0.1115702);
+   hmuP__2->SetBinContent(8,0.02892562);
+   hmuP__2->SetBinContent(9,0.03305785);
+   hmuP__2->SetEntries(244);
+   hmuP__2->SetDirectory(0);
+   hmuP__2->SetLineColor(2);
+   hmuP__2->GetXaxis()->SetLabelFont(42);
+   hmuP__2->GetXaxis()->SetLabelSize(0.035);
+   hmuP__2->GetXaxis()->SetTitleSize(0.035);
+   hmuP__2->GetXaxis()->SetTitleFont(42);
+   hmuP__2->GetYaxis()->SetLabelFont(42);
+   hmuP__2->GetYaxis()->SetLabelSize(0.035);
+   hmuP__2->GetYaxis()->SetTitleSize(0.035);
+   hmuP__2->GetYaxis()->SetTitleFont(42);
+   hmuP__2->GetZaxis()->SetLabelFont(42);
+   hmuP__2->GetZaxis()->SetLabelSize(0.035);
+   hmuP__2->GetZaxis()->SetTitleSize(0.035);
+   hmuP__2->GetZaxis()->SetTitleFont(42);
+   hmuP__2->Draw("SAME");
+   
+   TH1D *HistDATA__3 = new TH1D("HistDATA__3","HistDATA",30,5000000,4e+07);
+   HistDATA__3->SetBinContent(10,0.008849558);
+   HistDATA__3->SetBinContent(12,0.01769912);
+   HistDATA__3->SetBinContent(13,0.02654867);
+   HistDATA__3->SetBinContent(14,0.09734513);
+   HistDATA__3->SetBinContent(15,0.1946903);
+   HistDATA__3->SetBinContent(16,0.2123894);
+   HistDATA__3->SetBinContent(17,0.1858407);
+   HistDATA__3->SetBinContent(18,0.1327434);
+   HistDATA__3->SetBinContent(19,0.07079646);
+   HistDATA__3->SetBinContent(20,0.03539823);
+   HistDATA__3->SetBinContent(21,0.01769912);
+   HistDATA__3->SetEntries(113);
+   HistDATA__3->SetDirectory(0);
+
+   Int_t ci;   // for color index setting
+   ci = TColor::GetColor("#000099");
+   HistDATA__3->SetLineColor(ci);
+   HistDATA__3->SetLineWidth(4);
+   HistDATA__3->GetXaxis()->SetLabelFont(42);
+   HistDATA__3->GetXaxis()->SetLabelSize(0.035);
+   HistDATA__3->GetXaxis()->SetTitleSize(0.035);
+   HistDATA__3->GetXaxis()->SetTitleFont(42);
+   HistDATA__3->GetYaxis()->SetLabelFont(42);
+   HistDATA__3->GetYaxis()->SetLabelSize(0.035);
+   HistDATA__3->GetYaxis()->SetTitleSize(0.035);
+   HistDATA__3->GetYaxis()->SetTitleFont(42);
+   HistDATA__3->GetZaxis()->SetLabelFont(42);
+   HistDATA__3->GetZaxis()->SetLabelSize(0.035);
+   HistDATA__3->GetZaxis()->SetTitleSize(0.035);
+   HistDATA__3->GetZaxis()->SetTitleFont(42);
+   HistDATA__3->Draw("SAME");
+   DataDist->Modified();
+   DataDist->cd();
+   DataDist->SetSelected(DataDist);
+}
